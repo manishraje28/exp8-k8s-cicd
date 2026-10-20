@@ -1,0 +1,4 @@
+logs/*.tmp
+screenshots/_html/
+.playwright-mcp/
+__pycache__/

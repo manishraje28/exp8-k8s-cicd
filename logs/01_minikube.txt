@@ -1,0 +1,18 @@
+PS> minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+
+PS> kubectl cluster-info
+Kubernetes control plane is running at https://127.0.0.1:54121
+CoreDNS is running at https://127.0.0.1:54121/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+PS> kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   66s   v1.37.0

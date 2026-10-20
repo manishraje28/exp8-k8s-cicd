@@ -1,0 +1,36 @@
+PS> tree /F (project files)
+./.github/workflows/ci-cd.yml
+./.gitignore
+./app/index.html
+./deployment.yaml
+./Dockerfile
+
+PS> type deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-web-app
+  labels:
+    app: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web-container
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"

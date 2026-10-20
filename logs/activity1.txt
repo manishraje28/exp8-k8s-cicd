@@ -1,0 +1,38 @@
+PS> kubectl apply -f deployment.yaml
+deployment.apps/sample-web-app created
+
+PS> kubectl get deployments
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+sample-web-app   2/2     2            2           7s
+
+PS> kubectl get pods -l app=web
+NAME                              READY   STATUS    RESTARTS   AGE
+sample-web-app-5cf58b94f4-bmskk   1/1     Running   0          7s
+sample-web-app-5cf58b94f4-rhfps   1/1     Running   0          7s
+
+PS> kubectl scale deployment sample-web-app --replicas=5
+deployment.apps/sample-web-app scaled
+
+PS> kubectl get deployments
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+sample-web-app   5/5     5            5           8s
+
+PS> kubectl get rs
+NAME                        DESIRED   CURRENT   READY   AGE
+sample-web-app-5cf58b94f4   5         5         5       8s
+
+PS> kubectl get pods -l app=web -o wide
+NAME                              READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+sample-web-app-5cf58b94f4-6mb9w   1/1     Running   0          1s    10.244.0.5   minikube   <none>           <none>
+sample-web-app-5cf58b94f4-bmskk   1/1     Running   0          8s    10.244.0.4   minikube   <none>           <none>
+sample-web-app-5cf58b94f4-n7lgp   1/1     Running   0          1s    10.244.0.6   minikube   <none>           <none>
+sample-web-app-5cf58b94f4-rhfps   1/1     Running   0          8s    10.244.0.3   minikube   <none>           <none>
+sample-web-app-5cf58b94f4-twrz9   1/1     Running   0          1s    10.244.0.7   minikube   <none>           <none>
+
+PS> kubectl get pods -w   (watch, captured after scaling)
+NAME                              READY   STATUS    RESTARTS   AGE
+sample-web-app-5cf58b94f4-6mb9w   1/1     Running   0          1s
+sample-web-app-5cf58b94f4-bmskk   1/1     Running   0          8s
+sample-web-app-5cf58b94f4-n7lgp   1/1     Running   0          1s
+sample-web-app-5cf58b94f4-rhfps   1/1     Running   0          8s
+sample-web-app-5cf58b94f4-twrz9   1/1     Running   0          1s

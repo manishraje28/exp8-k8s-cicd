@@ -1,0 +1,46 @@
+[
+ [
+  "Setup Step 1-4: Installed Minikube v1.39.0 and Helm v4.3.1 via winget; Docker Desktop 28.3.2 and kubectl were already installed.",
+  "screenshots/00_setup_tools.png"
+ ],
+ [
+  "Setup Step 5: Started Minikube with 'minikube start --driver=docker' and verified with 'kubectl cluster-info' and 'kubectl get nodes' (node Ready).",
+  "screenshots/01_minikube.png"
+ ],
+ [
+  "Task 1.1: Created the project repo with app/index.html, Dockerfile and the declarative deployment.yaml (2 replicas, nginx:alpine, CPU/memory requests and limits).",
+  "screenshots/02_files.png"
+ ],
+ [
+  "Task 2.2: Created .github/workflows/ci-cd.yml (checkout, Docker Hub login from secrets, Buildx, build and push tagged v1.0.<run_number>).",
+  "screenshots/03_workflow.png"
+ ],
+ [
+  "Task 1.2: Applied deployment.yaml, inspected deployments and pods, scaled to 5 replicas; all 5 pods are Running (Screenshot 1 deliverable).",
+  "screenshots/04_activity1_scaled_5_pods.png"
+ ],
+ [
+  "Extra check: built the same Docker image locally (docker build), ran it on port 8081 and confirmed the custom page is served - this is exactly what the CI pipeline will build.",
+  "screenshots/07_docker_local_build.png"
+ ],
+ [
+  "Activity 3 Option A: enabled the metrics-server and dashboard addons; 'kubectl top nodes' and 'kubectl top pods' now return live CPU/Memory.",
+  "screenshots/05_metrics_server_top.png"
+ ],
+ [
+  "Activity 3 Option A: opened the Minikube Kubernetes Dashboard - sample-web-app shows 5/5 pods Running.",
+  "screenshots/06_dashboard_workloads.png"
+ ],
+ [
+  "Activity 3 Option B: added the prometheus-community Helm repo and installed kube-prometheus-stack; port-forwarded Grafana to localhost:3000.",
+  "screenshots/09_helm_prometheus_install.png"
+ ],
+ [
+  "Activity 3 Option B: logged into Grafana (admin / prom-operator) and opened 'Kubernetes / Compute Resources / Namespace (Pods)' - live CPU usage per pod (Screenshot 3 deliverable). A busybox load-generator pod sends traffic to the app service.",
+  "screenshots/10_grafana_cpu_usage.png"
+ ],
+ [
+  "Activity 3 Option B: live Memory usage per pod in Grafana, including all 5 sample-web-app replicas.",
+  "screenshots/11_grafana_memory_usage.png"
+ ]
+]

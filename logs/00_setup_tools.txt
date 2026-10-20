@@ -1,0 +1,13 @@
+﻿PS> docker --version
+Docker version 28.3.2, build 578ccf6
+
+PS> kubectl version --client
+Client Version: v1.32.2
+Kustomize Version: v5.5.0
+
+PS> minikube version
+minikube version: v1.39.0
+commit: 7a9f6a841470a207de8cf4bafcccee0969d8ba10
+
+PS> helm version
+version.BuildInfo{Version:"v4.3.1", GitCommit:"c0d08d0d6d9424d4a14febb5e8a3e51b0dd00dff", GitTreeState:"clean", GoVersion:"go1.27.2", KubeClientVersion:"v1.37"}
