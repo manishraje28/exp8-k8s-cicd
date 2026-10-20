@@ -1,0 +1,18 @@
+PS> kubectl set image deployment/sample-web-app web-container=manishraje28/sample-web-app:v1.0.1
+deployment.apps/sample-web-app image updated
+
+PS> kubectl rollout status deployment/sample-web-app --timeout=180s
+Waiting for deployment "sample-web-app" rollout to finish: 3 out of 5 new replicas have been updated...
+Waiting for deployment "sample-web-app" rollout to finish: 4 of 5 updated replicas are available...
+deployment "sample-web-app" successfully rolled out
+
+PS> kubectl exec deploy/sample-web-app -- wget -qO- localhost | findstr h1
+<h1>Experiment 8: Kubernetes + CI/CD</h1>
+
+PS> kubectl get pods -l app=web -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,IMAGE:.spec.containers[0].image
+NAME                              STATUS    IMAGE
+sample-web-app-64dbf556ff-52g2n   Running   manishraje28/sample-web-app:v1.0.1
+sample-web-app-64dbf556ff-lr8x8   Running   manishraje28/sample-web-app:v1.0.1
+sample-web-app-64dbf556ff-pfxcg   Running   manishraje28/sample-web-app:v1.0.1
+sample-web-app-64dbf556ff-sbzzh   Running   manishraje28/sample-web-app:v1.0.1
+sample-web-app-64dbf556ff-vxlmc   Running   manishraje28/sample-web-app:v1.0.1

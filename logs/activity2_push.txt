@@ -1,0 +1,28 @@
+PS> git add .
+
+PS> git commit -m "feat: configure GitHub Actions CI/CD pipeline"
+[main 77f99fa] feat: configure GitHub Actions CI/CD pipeline
+
+ .github/workflows/ci-cd.yml                |  23 ++++++++
+ .gitignore                                 |   4 ++
+ Dockerfile                                 |   3 ++
+ Experiment8_Step_Log.docx                  | Bin 0 -> 941786 bytes
+ app/index.html                             |   6 +++
+ build_steplog.py                           |  13 +++++
+ deployment.yaml                            |  28 ++++++++++
+ logs/00_setup_tools.txt                    |  13 +++++
+ logs/01_minikube.txt                       |  18 +++++++
+ logs/02_files.txt                          |  36 +++++++++++++
+ logs/03_workflow.txt                       |  29 ++++++++++
+ logs/activity1.txt                         |  38 +++++++++++++
+ logs/activity3a.txt                        |  29 ++++++++++
+ logs/activity3b.txt                        |  47 ++++++++++++++++
+ logs/dashboard_url.txt                     |   4 ++
+ logs/docker_local.txt                      |  83 +++++++++++++++++++++++++++++
+ screenshots/00_setup_tools.png             | Bin 0 -> 28463 bytes
+ screenshots/01_minikube.png                | Bin 0 -> 30389 bytes
+
+PS> git push origin main
+branch 'main' set up to track 'origin/main'.
+To https://github.com/manishraje28/exp8-k8s-cicd.git
+ * [new branch]      main -> main

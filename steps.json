@@ -42,5 +42,37 @@
  [
   "Activity 3 Option B: live Memory usage per pod in Grafana, including all 5 sample-web-app replicas.",
   "screenshots/11_grafana_memory_usage.png"
+ ],
+ [
+  "Task 2.1 (done by student): created the Docker Hub access token and added the DOCKERHUB_USERNAME and DOCKERHUB_TOKEN repository secrets in GitHub (Settings > Secrets and variables > Actions).",
+  null
+ ],
+ [
+  "Task 2.3: added the GitHub remote, committed with 'feat: configure GitHub Actions CI/CD pipeline' and ran 'git push origin main'.",
+  "screenshots/12_git_push.png"
+ ],
+ [
+  "Task 2.3: the code is now on GitHub at github.com/manishraje28/exp8-k8s-cicd, with deployment.yaml and .github/workflows/ci-cd.yml.",
+  "screenshots/13_github_repo.png"
+ ],
+ [
+  "Task 2.3: the push triggered the 'CI/CD Pipeline - Build and Push' workflow; run #1 completed green in 26s (Screenshot 2 deliverable).",
+  "screenshots/14_actions_green_run.png"
+ ],
+ [
+  "Task 2.3: pipeline log - every step of the build-and-push job passed (Checkout, Docker Hub login, Buildx setup, Build and Push).",
+  "screenshots/16_actions_job_steps.png"
+ ],
+ [
+  "Task 2.3: confirmed image delivery in Docker Hub - manishraje28/sample-web-app:v1.0.1 (tag = v1.0.<run_number>).",
+  "screenshots/17_dockerhub_image.png"
+ ],
+ [
+  "Extra: rolled the CI-built image into Minikube with 'kubectl set image'; all 5 replicas now run manishraje28/sample-web-app:v1.0.1 and serve the custom page.",
+  "screenshots/18_deploy_ci_image.png"
+ ],
+ [
+  "Phase 3: generated the submission report Experiment8_Report.pdf (repo link, YAML files, pipeline log, the 3 required screenshots, quiz answers, reflection answers), then pushed screenshots and report to GitHub.",
+  null
  ]
 ]
